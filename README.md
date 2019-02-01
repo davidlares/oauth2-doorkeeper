@@ -1,24 +1,44 @@
-# README
+# DavidOauth2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  A simple attempt to recreate and simulate an OAuth2 Server (ID/Secret) and its clients access with Rails 5 and DoorKeeper Gem.
 
-Things you may want to cover:
+## DoorKeeper
 
-* Ruby version
+  - The main core of this demo is the usage of this gem [DoorKeeper](https://github.com/doorkeeper-gem/doorkeeper)
 
-* System dependencies
+## Endpoints
 
-* Configuration
+  `/api/courses` just return a title and description combo for dummy courses.
 
-* Database creation
+   This endpoint should be protected by Doorkeeper and should be accessed with an valid `access_token`
 
-* Database initialization
+## Emulating Clients
 
-* How to run the test suite
+  For this personal demo I used a gem called `oauth2` (`gem 'oauth2'`) which helps to simulate clients without any concerns about any type (web, mobile or even a desktop)
 
-* Services (job queues, cache servers, search engines, etc.)
+  A pretty simple way of interacting with it, is with Ruby IRB, so:
 
-* Deployment instructions
+  ```
+  # creating a client
+  client = OAuth2::Client.new(app_id, secret, site: "http://localhost:3000")
+  # getting access token with your current user and password
+  token = client.password.get_token('user','password')
+  # printing the Token
+  puts token.token.token
+  # refresh token? yep
+  puts token.refresh_token
 
-* ...
+  # accessing via IRB
+  token.get('api/courses').parsed
+
+  ```
+
+  Much of this information are on the official repos and README file of the DoorKeeper Gem, it's pretty good explained.
+
+## Credits
+
+   - [David E Lares S](https://twitter.com/@davidlares3)
+
+## License
+
+   - [MIT](https://opensource.org/licenses/MIT)
