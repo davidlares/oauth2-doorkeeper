@@ -21,10 +21,13 @@
   ```
   # creating a client
   client = OAuth2::Client.new(app_id, secret, site: "http://localhost:3000")
+
   # getting access token with your current user and password
   token = client.password.get_token('user','password')
+
   # printing the Token
   puts token.token.token
+
   # refresh token? yep
   puts token.refresh_token
 
@@ -32,6 +35,10 @@
   token.get('api/courses').parsed
 
   ```
+
+  A Browser Way:
+
+  `http://localhost:3000/[api/courses]?access_token=[your_access_token]`
 
   Much of this information are on the official repos and README file of the DoorKeeper Gem, it's pretty good explained.
 
