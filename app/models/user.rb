@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   # requiring library
   require "bcrypt"
-
+  has_many :courses
+  
   # model exec
   before_create :set_encrypt_password
 
@@ -14,7 +15,7 @@ class User < ApplicationRecord
   end
 
   def is_valid_password?(password):
-    self.password == BCrypt::Engine.has_secret(password, self.password)
+    self.password == BCrypt::Engine.hash_secret(password, self.password)
   end
 
 end
