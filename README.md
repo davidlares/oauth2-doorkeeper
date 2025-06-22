@@ -10,7 +10,7 @@
 
   `/api/courses` just return a title and description combo for dummy courses.
 
-   This endpoint should be protected by Doorkeeper and should be accessed with an valid `access_token`
+   Doorkeeper should protect this endpoint and should be accessed with an valid `access_token`
 
 ## Emulating Clients
 
