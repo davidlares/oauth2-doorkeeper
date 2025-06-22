@@ -1,4 +1,4 @@
-# DavidOauth2
+## DavidOauth2
 
   A simple attempt to recreate and simulate an OAuth2 Server (ID/Secret) and its clients access with Rails 5 and DoorKeeper Gem.
 
@@ -42,10 +42,8 @@
 
   Much of this information are on the official repos and README file of the DoorKeeper Gem, it's pretty good explained.
 
-## Credits
+## Créditos
+[David E Lares S](https://davidlares.com)
 
-   - [David E Lares S](https://twitter.com/@davidlares3)
-
-## License
-
-   - [MIT](https://opensource.org/licenses/MIT)
+## Licencia
+[MIT](https://opensource.org/licenses/MIT)
